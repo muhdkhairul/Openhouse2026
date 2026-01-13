@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Web AR Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- MindAR -->
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Info Panel -->
+  <div id="infoPanel" class="hidden">
+    <h2 id="infoTitle"></h2>
+    <p id="infoText"></p>
+    <button onclick="closeInfo()">Close</button>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

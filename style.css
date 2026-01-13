@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+#infoPanel {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 16px;
+  width: 85%;
+  max-width: 400px;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+#infoPanel.hidden {
+  display: none;
+}
+
+#infoPanel button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+}
