@@ -5,7 +5,8 @@ import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.150.1/exampl
 
 const mindarThree = new window.MINDAR.IMAGE.MindARThree({
   container: document.body,
-  imageTargetSrc: "assets/marker.mind"
+  //imageTargetSrc: "assets/marker.mind"
+  imageTargetSrc: "https://github.com/muhdkhairul/Openhouse2026/raw/refs/heads/main/assets/marker.mind"
 });
 
 const { renderer, scene, camera } = mindarThree;
@@ -19,11 +20,11 @@ scene.add(light);
 // Load model
 let model;
 const mtlLoader = new MTLLoader();
-mtlLoader.load("assets/model.mtl", (materials) => {
+mtlLoader.load("https://github.com/muhdkhairul/Openhouse2026/raw/refs/heads/main/assets/model.mtl", (materials) => {
   materials.preload();
   const objLoader = new OBJLoader();
   objLoader.setMaterials(materials);
-  objLoader.load("assets/model.obj", (obj) => {
+  objLoader.load("https://github.com/muhdkhairul/Openhouse2026/raw/refs/heads/main/assets/model.obj", (obj) => {
     model = obj;
     model.scale.set(0.02, 0.02, 0.02); // 🔧 adjust scale here
     model.rotation.x = -Math.PI / 2;
