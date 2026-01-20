@@ -589,10 +589,21 @@
             
             // Hide loading after model is visible
             const targetEntity = document.getElementById('target-entity');
+            let infoPanelShown = false;
+            
             targetEntity.addEventListener('track', function(e) {
                 if (e.detail.status === 'visible' && !isModelLoaded) {
                     // Model is now visible in AR
                     console.log('Target detected, model should be visible');
+                    isModelLoaded = true;
+                    
+                    // Show info panel automatically when marker is detected
+                    if (!infoPanelShown) {
+                        setTimeout(() => {
+                            showInfo();
+                            infoPanelShown = true;
+                        }, 1500); // Delay to allow model to render first
+                    }
                 }
             });
         });
