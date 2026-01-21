@@ -7,7 +7,7 @@
     <title>NAFA 3DD Openhouse 2026</title>
     
     <!-- A-Frame & MindAR -->
-    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
     
     <!-- Fonts -->
@@ -450,6 +450,7 @@
     
     <!-- A-Frame Scene -->
     <div id="ar-container">
+        <!-- marker -->
         <a-scene 
             mindar-image="imageTargetSrc: ./assets/generalsignage.mind;" 
             color-space="sRGB" 
@@ -460,9 +461,15 @@
             renderer="antialias: true; alpha: true"
             id="ar-scene">
             
+            <!-- ALL 3D Model assets declare here-->
             <a-assets>
                 <!-- 3D Model -->
-                <a-asset-item id="modeltape" src="./assets/model1tape.gltf"></a-asset-item>
+                <a-asset-item id="modeltapeblank" src="./assets/tapeblank.gltf">
+                </a-asset-item>
+            
+                <!-- 3D Model 2nd -->
+                <a-asset-item  id="modeltapeword" src="./assets/tapeword.gltf">
+                </a-asset-item>
                 
                 <!-- Audio (optional) -->
                 <audio id="click-sound" src=""></audio>
@@ -475,8 +482,9 @@
             <!-- AR Target -->
             <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
             
+            <!-- AR MODEL to Target -->
             <a-entity mindar-image-target="targetIndex: 0" id="target-entity">
-                <!-- Marker Image -->
+                <!-- Marker Image 
                 <a-plane 
                     src="#card" 
                     position="0 0 0" 
@@ -485,22 +493,34 @@
                     rotation="0 0 0"
                     material="opacity: 0; transparent: true">
                 </a-plane>
+                -->
                 
-                <!-- 3D Model -->
+                <!-- 3D Model (material="color: #00D4FF; metalness: 0.5; roughness: 0.3; emissive: #005580; emissiveIntensity: 0.3")-->
                 <a-gltf-model 
                     id="main-model"
-                    rotation="90 90 90" 
+                    rotation="0 0 0" 
                     position="0 0 0.1" 
                     scale="0.015 0.015 0.015" 
-                    src="#modeltape"
-                    material="color: #00D4FF; metalness: 0.5; roughness: 0.3; emissive: #005580; emissiveIntensity: 0.3"
-                    animation="property: rotation; to: 90 270 90; dur: 4000; easing: easeInOutQuad; loop: true; dir: alternate"
+                    src="#modeltapeblank"
+                    material=""
+                    animation="property: rotation; to: 0 0 0; dur: 4000; easing: easeInOutQuad; loop: true; dir: alternate"
+                    animation__scale="property: scale; to: 0.018 0.018 0.018; dur: 1900; easing: easeInOutQuad; loop: true; dir: alternate">
+                </a-gltf-model>
+
+                <a-gltf-model 
+                    id="main-model2"
+                    rotation="0 0 0" 
+                    position="0 0 0.1" 
+                    scale="0.015 0.015 0.015" 
+                    src="#modeltapeword"
+                    material=""
+                    animation="property: rotation; to: 0 0 0; dur: 4000; easing: easeInOutQuad; loop: true; dir: alternate"
                     animation__scale="property: scale; to: 0.018 0.018 0.018; dur: 1900; easing: easeInOutQuad; loop: true; dir: alternate">
                 </a-gltf-model>
                 
                 <!-- Floating Label -->
                 <a-entity 
-                    position="0 1.6 0" 
+                    position="0 0 1" 
                     text="value: School of 3D Design; color: #00D4FF; align: center; width: 2; font: https://cdn.aframe.io/fonts/Roboto-msdf.json"
                     scale="0 0 0"
                     animation="property: scale; to: 2 2 2; dur: 1000; delay: 500; easing: easeOutElastic">
@@ -514,7 +534,9 @@
                     src="#model"
                     material="color: #FF6B6B; metalness: 0.8; roughness: 0.2"
                     animation="property: position; to: 0.3 0.2 0.05; dur: 1500; easing: easeInOutQuad; loop: true; dir: alternate">
-                </a-gltf-model>-->
+                </a-gltf-model>
+                -->
+                
             </a-entity>
         </a-scene>
     </div>
