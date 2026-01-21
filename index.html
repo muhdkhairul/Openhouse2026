@@ -451,7 +451,7 @@
     <!-- A-Frame Scene -->
     <div id="ar-container">
         <a-scene 
-            mindar-image="imageTargetSrc: ./assets/marker.mind;" 
+            mindar-image="imageTargetSrc: ./assets/generalsignage.mind;" 
             color-space="sRGB" 
             renderer="colorManagement: true, physicallyCorrectLights" 
             vr-mode-ui="enabled: false" 
@@ -462,7 +462,7 @@
             
             <a-assets>
                 <!-- 3D Model -->
-                <a-asset-item id="model" src="./assets/marker.gltf"></a-asset-item>
+                <a-asset-item id="modeltape" src="./assets/model1tape.gltf"></a-asset-item>
                 
                 <!-- Audio (optional) -->
                 <audio id="click-sound" src=""></audio>
@@ -492,18 +492,18 @@
                     rotation="90 90 90" 
                     position="0 0 0.1" 
                     scale="0.015 0.015 0.015" 
-                    src="#model"
+                    src="#modeltape"
                     material="color: #00D4FF; metalness: 0.5; roughness: 0.3; emissive: #005580; emissiveIntensity: 0.3"
-                    animation="property: rotation; to: 90 90 180; dur: 4000; easing: easeInOutQuad; loop: true; dir: alternate"
-                    animation__scale="property: scale; to: 0.018 0.018 0.018; dur: 2000; easing: easeInOutQuad; loop: true; dir: alternate">
+                    animation="property: rotation; to: 90 270 90; dur: 4000; easing: easeInOutQuad; loop: true; dir: alternate"
+                    animation__scale="property: scale; to: 0.018 0.018 0.018; dur: 1900; easing: easeInOutQuad; loop: true; dir: alternate">
                 </a-gltf-model>
                 
                 <!-- Floating Label -->
                 <a-entity 
-                    position="0 0.6 0" 
-                    text="value: NAFA 3DD; color: #00D4FF; align: center; width: 2; font: https://cdn.aframe.io/fonts/Roboto-msdf.json"
+                    position="0 1.6 0" 
+                    text="value: School of 3D Design; color: #00D4FF; align: center; width: 2; font: https://cdn.aframe.io/fonts/Roboto-msdf.json"
                     scale="0 0 0"
-                    animation="property: scale; to: 1 1 1; dur: 1000; delay: 500; easing: easeOutElastic">
+                    animation="property: scale; to: 2 2 2; dur: 1000; delay: 500; easing: easeOutElastic">
                 </a-entity>
                 
                 <!-- Secondary Model (for visual variety) 
