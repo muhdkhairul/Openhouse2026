@@ -450,95 +450,106 @@
     
     <!-- A-Frame Scene -->
     <div id="ar-container">
-        <!-- marker -->
+        <!-- marker generalsignage -->
         <a-scene 
-            mindar-image="imageTargetSrc: ./assets/generalsignage.mind;" 
-            color-space="sRGB" 
-            renderer="colorManagement: true, physicallyCorrectLights" 
-            vr-mode-ui="enabled: false" 
+            mindar-image="imageTargetSrc: ./assets/targets.mind;" 
+            color-space="sRGB"
+            renderer="antialias: true; alpha: true; physicallyCorrectLights: true"
+            vr-mode-ui="enabled: false"
             device-orientation-permission-ui="enabled: false"
-            embedded="false"
-            renderer="antialias: true; alpha: true"
             id="ar-scene">
-            
-            <!-- ALL 3D Model assets declare here-->
+
+            <!-- Assets -->
             <a-assets>
-                <!-- 3D Model -->
-                <a-asset-item id="modeltapeblank" src="./assets/tapeblank.gltf">
-                </a-asset-item>
-            
-                <!-- 3D Model 2nd -->
-                <a-asset-item  id="modeltapeword" src="./assets/tapeword.gltf">
-                </a-asset-item>
-                
-                <!-- Audio (optional) -->
-                <audio id="click-sound" src=""></audio>
+                <a-asset-item id="model1" src="./assets/model1.gltf"></a-asset-item>
+                <a-asset-item id="model2" src="./assets/tape.gltf"></a-asset-item>
+                <a-asset-item id="model3" src="./assets/model3.gltf"></a-asset-item>
+                <a-asset-item id="model4" src="./assets/model4.gltf"></a-asset-item>
+                <a-asset-item id="model5" src="./assets/model5.gltf"></a-asset-item>
+                <a-asset-item id="model6" src="./assets/model6.gltf"></a-asset-item>
+                <a-asset-item id="model7" src="./assets/model7.gltf"></a-asset-item>
+                <a-asset-item id="model8" src="./assets/model8.gltf"></a-asset-item>
+                <a-asset-item id="model9" src="./assets/model9.gltf"></a-asset-item>
+                <a-asset-item id="model10" src="./assets/model10.gltf"></a-asset-item>
             </a-assets>
-            
+
             <!-- Lighting -->
             <a-entity light="type: ambient; intensity: 0.8"></a-entity>
-            <a-entity light="type: directional; intensity: 0.5; color: #fff" position="1 1 1"></a-entity>
-            
-            <!-- AR Target -->
-            <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-            
-            <!-- AR MODEL to Target -->
-            <a-entity mindar-image-target="targetIndex: 0" id="target-entity">
-                <!-- Marker Image 
-                <a-plane 
-                    src="#card" 
-                    position="0 0 0" 
-                    height="0.5" 
-                    width="1" 
-                    rotation="0 0 0"
-                    material="opacity: 0; transparent: true">
-                </a-plane>
-                -->
-                
-                <!-- 3D Model (material="color: #00D4FF; metalness: 0.5; roughness: 0.3; emissive: #005580; emissiveIntensity: 0.3")-->
-                <a-gltf-model 
-                    id="main-model"
-                    rotation="0 0 0" 
-                    position="0 0 0.1" 
-                    scale="0.015 0.015 0.015" 
-                    src="#modeltapeblank"
-                    material=""
-                    animation="property: rotation; to: 0 0 0; dur: 4000; easing: easeInOutQuad; loop: true; dir: alternate"
-                    animation__scale="property: scale; to: 0.018 0.018 0.018; dur: 1900; easing: easeInOutQuad; loop: true; dir: alternate">
-                </a-gltf-model>
+            <a-entity light="type: directional; intensity: 0.6" position="1 1 1"></a-entity>
 
-                <a-gltf-model 
-                    id="main-model2"
-                    rotation="0 0 0" 
-                    position="0 0 0.1" 
-                    scale="0.015 0.015 0.015" 
-                    src="#modeltapeword"
-                    material=""
-                    animation="property: rotation; to: 0 0 0; dur: 4000; easing: easeInOutQuad; loop: true; dir: alternate"
-                    animation__scale="property: scale; to: 0.018 0.018 0.018; dur: 1900; easing: easeInOutQuad; loop: true; dir: alternate">
+            <a-camera look-controls="enabled: false"></a-camera>
+
+            <!-- TARGET 0 -->
+            <a-entity mindar-image-target="targetIndex: 0">
+                <a-gltf-model src="#model1" scale="0.001 0.001 0.001"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
                 </a-gltf-model>
-                
-                <!-- Floating Label -->
-                <a-entity 
-                    position="0 0 1" 
-                    text="value: School of 3D Design; color: #00D4FF; align: center; width: 2; font: https://cdn.aframe.io/fonts/Roboto-msdf.json"
-                    scale="0 0 0"
-                    animation="property: scale; to: 2 2 2; dur: 1000; delay: 500; easing: easeOutElastic">
+                <a-entity position="0 0.2 0"
+                    text="value: Model 1; align: center; color: #00D4FF; width: 2">
                 </a-entity>
-                
-                <!-- Secondary Model (for visual variety) 
-                <a-gltf-model 
-                    rotation="90 45 90" 
-                    position="0.3 0.1 0.05" 
-                    scale="0.008 0.008 0.008" 
-                    src="#model"
-                    material="color: #FF6B6B; metalness: 0.8; roughness: 0.2"
-                    animation="property: position; to: 0.3 0.2 0.05; dur: 1500; easing: easeInOutQuad; loop: true; dir: alternate">
-                </a-gltf-model>
-                -->
-                
             </a-entity>
+
+            <!-- TARGET 1 -->
+            <a-entity mindar-image-target="targetIndex: 1">
+                <a-gltf-model src="#model2" scale="0.001 0.001 0.001"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
+                <a-entity position="0 0.2 0"
+                    text="value: Model 2; align: center; color: #00D4FF; width: 2">
+                </a-entity>
+            </a-entity>
+
+            <!-- TARGET 2 -->
+            <a-entity mindar-image-target="targetIndex: 2">
+                <a-gltf-model src="#model3" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 3; align: center"></a-entity>
+            </a-entity>
+
+            <!-- TARGET 3 -->
+            <a-entity mindar-image-target="targetIndex: 3">
+                <a-gltf-model src="#model4" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 4; align: center"></a-entity>
+            </a-entity>
+
+            <!-- TARGET 4 -->
+            <a-entity mindar-image-target="targetIndex: 4">
+                <a-gltf-model src="#model5" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 5; align: center"></a-entity>
+            </a-entity>
+
+            <!-- TARGET 5 -->
+            <a-entity mindar-image-target="targetIndex: 5">
+                <a-gltf-model src="#model6" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 6; align: center"></a-entity>
+            </a-entity>
+
+            <!-- TARGET 6 -->
+            <a-entity mindar-image-target="targetIndex: 6">
+                <a-gltf-model src="#model7" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 7; align: center"></a-entity>
+            </a-entity>
+
+            <!-- TARGET 7 -->
+            <a-entity mindar-image-target="targetIndex: 7">
+                <a-gltf-model src="#model8" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 8; align: center"></a-entity>
+            </a-entity>
+
+            <!-- TARGET 8 -->
+            <a-entity mindar-image-target="targetIndex: 8">
+                <a-gltf-model src="#model9" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 9; align: center"></a-entity>
+            </a-entity>
+
+            <!-- TARGET 9 -->
+            <a-entity mindar-image-target="targetIndex: 9">
+                <a-gltf-model src="#model10" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-entity position="0 0.2 0" text="value: Model 10; align: center"></a-entity>
+            </a-entity>
+
         </a-scene>
+
+
     </div>
 
     <script>
