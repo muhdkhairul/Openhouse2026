@@ -461,16 +461,16 @@
 
             <!-- Assets -->
             <a-assets>
-                <a-asset-item id="model1" src="./assets/model1.gltf"></a-asset-item>
-                <a-asset-item id="model2" src="./assets/tape.gltf"></a-asset-item>
-                <a-asset-item id="model3" src="./assets/model3.gltf"></a-asset-item>
-                <a-asset-item id="model4" src="./assets/model4.gltf"></a-asset-item>
-                <a-asset-item id="model5" src="./assets/model5.gltf"></a-asset-item>
-                <a-asset-item id="model6" src="./assets/model6.gltf"></a-asset-item>
-                <a-asset-item id="model7" src="./assets/model7.gltf"></a-asset-item>
-                <a-asset-item id="model8" src="./assets/model8.gltf"></a-asset-item>
-                <a-asset-item id="model9" src="./assets/model9.gltf"></a-asset-item>
-                <a-asset-item id="model10" src="./assets/model10.gltf"></a-asset-item>
+                <a-asset-item id="model0" src="./assets/glb/tape.glb"></a-asset-item>
+                <a-asset-item id="model1" src="./assets/glb/butterfly.glb"></a-asset-item>
+                <a-asset-item id="model2" src="./assets/glb/donut.glb"></a-asset-item>
+                <a-asset-item id="model3" src="./assets/glb/puzzle.glb"></a-asset-item>
+                <a-asset-item id="model4" src="./assets/glb/dice.glb"></a-asset-item>
+                <a-asset-item id="model5" src="./assets/glb/tape.glb"></a-asset-item>
+                <a-asset-item id="model6" src="./assets/glb/tape.glb"></a-asset-item>
+                <a-asset-item id="model7" src="./assets/glb/cartoon.glb"></a-asset-item>
+                <a-asset-item id="model8" src="./assets/glb/tape.glb"></a-asset-item>
+                <a-asset-item id="model9" src="./assets/glb/tape.glb"></a-asset-item>
             </a-assets>
 
             <!-- Lighting -->
@@ -479,9 +479,9 @@
 
             <a-camera look-controls="enabled: false"></a-camera>
 
-            <!-- TARGET 0 -->
+            <!-- TARGET 0 general signage -->
             <a-entity mindar-image-target="targetIndex: 0">
-                <a-gltf-model src="#model1" scale="0.001 0.001 0.001"
+                <a-gltf-model src="#model0" scale="1 1 1"
                     animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
                 </a-gltf-model>
                 <a-entity position="0 0.2 0"
@@ -489,9 +489,9 @@
                 </a-entity>
             </a-entity>
 
-            <!-- TARGET 1 -->
+            <!-- TARGET 1 tape keychain -->
             <a-entity mindar-image-target="targetIndex: 1">
-                <a-gltf-model src="#model2" scale="0.001 0.001 0.001"
+                <a-gltf-model src="#model1" scale="1 1 1"
                     animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
                 </a-gltf-model>
                 <a-entity position="0 0.2 0"
@@ -499,51 +499,67 @@
                 </a-entity>
             </a-entity>
 
-            <!-- TARGET 2 -->
+            <!-- TARGET 2 donut keychain -->
             <a-entity mindar-image-target="targetIndex: 2">
-                <a-gltf-model src="#model3" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model2" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+            </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 3; align: center"></a-entity>
             </a-entity>
 
-            <!-- TARGET 3 -->
+            <!-- TARGET 3 puzzle keychain -->
             <a-entity mindar-image-target="targetIndex: 3">
-                <a-gltf-model src="#model4" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model3" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 4; align: center"></a-entity>
             </a-entity>
 
-            <!-- TARGET 4 -->
+            <!-- TARGET 4 school of 3d design -->
             <a-entity mindar-image-target="targetIndex: 4">
-                <a-gltf-model src="#model5" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model4" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 5; align: center"></a-entity>
             </a-entity>
 
-            <!-- TARGET 5 -->
+            <!-- TARGET 5 nafa 2026 open house -->
             <a-entity mindar-image-target="targetIndex: 5">
-                <a-gltf-model src="#model6" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model5" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 6; align: center"></a-entity>
             </a-entity>
 
-            <!-- TARGET 6 -->
+            <!-- TARGET 6 nafa uas-->
             <a-entity mindar-image-target="targetIndex: 6">
-                <a-gltf-model src="#model7" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model6" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 7; align: center"></a-entity>
             </a-entity>
 
-            <!-- TARGET 7 -->
+            <!-- TARGET 7 3dd design future-->
             <a-entity mindar-image-target="targetIndex: 7">
-                <a-gltf-model src="#model8" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model7" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 8; align: center"></a-entity>
             </a-entity>
 
             <!-- TARGET 8 -->
             <a-entity mindar-image-target="targetIndex: 8">
-                <a-gltf-model src="#model9" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model8" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 9; align: center"></a-entity>
             </a-entity>
 
             <!-- TARGET 9 -->
             <a-entity mindar-image-target="targetIndex: 9">
-                <a-gltf-model src="#model10" scale="0.001 0.001 0.001"></a-gltf-model>
+                <a-gltf-model src="#model9" scale="1 1 1"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: Model 10; align: center"></a-entity>
             </a-entity>
 
