@@ -519,14 +519,15 @@
             <a-entity mindar-image-target="targetIndex: 4">
                 <a-gltf-model 
                     src="#model0" 
+                    position="0 0 0"
                     rotation="-90 0 0" 
                     scale="0.012 0.012 0.012"
-                    animation="property: rotation; to: -90 0 0; loop: true; dur: 6000">
+                    animation="property: rotation; to: -90 0 360; loop: true; dur: 6000">
                 </a-gltf-model>
                 <a-entity 
-                    position="-0.3 0 -0.3 0" 
+                    position="-0.3 0 -0.3" 
                     text="value: School of 3D Design; color: #002126; align: center; width: 2; font: https://cdn.aframe.io/fonts/Roboto-msdf.json" 
-                    rotation="0 0 -90" 
+                    rotation="0 0 90" 
                     scale="1 1 1" 
                     animation="property: scale; to: 1 1 1; dur: 1000; delay: 500; easing: easeOutElastic">
                 </a-entity>
@@ -550,10 +551,19 @@
 
             <!-- TARGET 7 3dd design future-->
             <a-entity mindar-image-target="targetIndex: 7">
-                <a-gltf-model src="#model4" scale="0.01 0.01 0.01"
-                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+                <a-gltf-model 
+                    src="#model4" 
+                    position="0 -0.3 0"
+                    rotation="-90 0 0" 
+                    scale="0.014 0.014 0.014"
+                    animation="property: rotation; to: -90 0 360; loop: true; dur: 6000">
                 </a-gltf-model>
-                <a-entity position="0 -0.3 0" text="value: 3D Design; align: center"></a-entity>
+                <a-entity position="0 -0.3 0" 
+                    text="value: 3D Design; color: #002126; align: center; width: 2; font: https://cdn.aframe.io/fonts/Roboto-msdf.json"
+                    position="0 0 0"
+                    rotation="0 0 0"
+                    scale="1 1 1">
+                </a-entity>
             </a-entity>
 
             <!-- TARGET 8 -->
