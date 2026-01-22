@@ -517,10 +517,18 @@
 
             <!-- TARGET 4 school of 3d design -->
             <a-entity mindar-image-target="targetIndex: 4">
-                <a-gltf-model src="#model0" scale="0.1 0.1 0.1"
-                    animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
+                <a-gltf-model 
+                    src="#model0" 
+                    rotation="90 0 0" 
+                    scale="0.01 0.01 0.01"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
                 </a-gltf-model>
-                <a-entity position="0 -0.3 0" text="value: School of 3D Design; align: center"></a-entity>
+                <a-entity 
+                    position="0 -0.3 0" 
+                    text="value: School of 3D Design; color: #00D4FF; align: center; width: 2; font: https://cdn.aframe.io/fonts/Roboto-msdf.json" 
+                    scale="0 0 0" 
+                    animation="property: scale; to: 2 2 2; dur: 1000; delay: 500; easing: easeOutElastic">
+                </a-entity>
             </a-entity>
 
             <!-- TARGET 5 nafa 2026 open house -->
@@ -542,7 +550,7 @@
             <!-- TARGET 7 3dd design future-->
             <a-entity mindar-image-target="targetIndex: 7">
                 <a-gltf-model src="#model4" scale="0.01 0.01 0.01"
-                    animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
                 </a-gltf-model>
                 <a-entity position="0 -0.3 0" text="value: 3D Design; align: center"></a-entity>
             </a-entity>
