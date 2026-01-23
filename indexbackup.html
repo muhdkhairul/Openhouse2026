@@ -482,7 +482,6 @@
             <!-- TARGET 0 general signage -->
             <a-entity mindar-image-target="targetIndex: 0">
                 <a-gltf-model src="#model6" scale="0.01 0.01 0.01"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
                 </a-gltf-model>
                 <a-entity position="0 -0.3 0"
@@ -493,7 +492,6 @@
             <!-- TARGET 1 tape keychain -->
             <a-entity mindar-image-target="targetIndex: 1">
                 <a-gltf-model src="#model9" scale="0.01 0.01 0.01"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
                 </a-gltf-model>
                 <a-entity position="0 -0.3 0"
@@ -504,7 +502,6 @@
             <!-- TARGET 2 donut keychain -->
             <a-entity mindar-image-target="targetIndex: 2">
                 <a-gltf-model src="#model5" scale="0.01 0.01 0.01"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
             </a-gltf-model>
                 <a-entity position="0 -0.3 0" text="value: Diploma in Design (Furniture and 3D crafts); align: center; color: #00D4FF; font: https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-entity>
@@ -513,7 +510,6 @@
             <!-- TARGET 3 puzzle keychain -->
             <a-entity mindar-image-target="targetIndex: 3">
                 <a-gltf-model src="#model8" scale="0.01 0.01 0.01"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
                 </a-gltf-model>
                 <a-entity position="0 -0.3 0" text="value: Diploma in Design (Interior and Spatial); align: center; color: #00D4FF; font: https://cdn.aframe.io/fonts/Roboto-msdf.json"></a-entity>
@@ -526,7 +522,6 @@
                     position="0 0 0"
                     rotation="-90 0 0" 
                     scale="0.012 0.012 0.012"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <!-- 
@@ -546,7 +541,6 @@
                     position="0 -0.3 0"
                     rotation="-90 0 0" 
                     scale="0.006 0.006 0.006"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity 
@@ -563,7 +557,6 @@
                     position="0 -0.30 0"
                     rotation="-90 0 0" 
                     scale="0.008 0.008 0.008"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity 
@@ -579,7 +572,6 @@
                     position="0 0 0"
                     rotation="-90 0 0" 
                     scale="0.014 0.014 0.014"
-                    data-base-scale="0.01"
                     animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity position="0 -0.6 0.3" 
@@ -718,51 +710,5 @@
             // window.open('https://nafa.edu.sg/3dd', '_blank');
         }
     </script>
-
-    <script>
-        let startDistance = null;
-        let zoomFactor = 1;
-
-        const MIN_ZOOM = 0.5;
-        const MAX_ZOOM = 3.0;
-
-        function getDistance(touches) {
-        const dx = touches[0].pageX - touches[1].pageX;
-        const dy = touches[0].pageY - touches[1].pageY;
-        return Math.sqrt(dx * dx + dy * dy);
-        }
-
-        document.addEventListener("touchstart", (e) => {
-        if (e.touches.length === 2) {
-            startDistance = getDistance(e.touches);
-        }
-        }, { passive: false });
-
-        document.addEventListener("touchmove", (e) => {
-        if (e.touches.length === 2 && startDistance) {
-            e.preventDefault();
-
-            const newDistance = getDistance(e.touches);
-            const scaleChange = newDistance / startDistance;
-            zoomFactor *= scaleChange;
-
-            zoomFactor = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoomFactor));
-            startDistance = newDistance;
-
-            document.querySelectorAll("a-gltf-model").forEach(model => {
-            if (!model.object3D.visible) return;
-
-            const base = parseFloat(model.dataset.baseScale);
-            const scaled = base * zoomFactor;
-            model.setAttribute("scale", `${scaled} ${scaled} ${scaled}`);
-            });
-        }
-        }, { passive: false });
-
-        document.addEventListener("touchend", () => {
-        startDistance = null;
-        });
-    </script>
-
 </body>
 </html>
