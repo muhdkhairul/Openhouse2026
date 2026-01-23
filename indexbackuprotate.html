@@ -6,10 +6,9 @@
     <meta name="description" content="NAFA 3DD Openhouse 2026 - Interactive AR Experience showcasing School of 3D Design">
     <title>NAFA 3DD Openhouse 2026</title>
     
-    <!-- A-Frame & MindAR SOURCE FILE-->
+    <!-- A-Frame & MindAR -->
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -389,7 +388,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -459,11 +457,9 @@
             renderer="antialias: true; alpha: true; physicallyCorrectLights: true"
             vr-mode-ui="enabled: false"
             device-orientation-permission-ui="enabled: false"
-            id="ar-scene"
-            mindar-face
-            embedded>
+            id="ar-scene">
 
-            <!-- 3D ASSETS BELOW-->
+            <!-- Assets -->
             <a-assets>
                 <a-asset-item id="model0" src="./assets/glb/0bowls.glb"></a-asset-item>
                 <a-asset-item id="model1" src="./assets/glb/1butterfly.glb"></a-asset-item>
@@ -475,9 +471,7 @@
                 <a-asset-item id="model7" src="./assets/glb/7house.glb"></a-asset-item>
                 <a-asset-item id="model8" src="./assets/glb/8puzzle.glb"></a-asset-item>
                 <a-asset-item id="model9" src="./assets/glb/9tape.glb"></a-asset-item>
-                <a-asset-item id="glassesModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/glasses/scene.gltf"></a-asset-item>
             </a-assets>
-            <!-- 3D ASSETS ABOVE-->
 
             <!-- Lighting -->
             <a-entity light="type: ambient; intensity: 0.8"></a-entity>
@@ -621,15 +615,6 @@
                     animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: .; align: center"></a-entity>
-            </a-entity>
-
-            <!-- FACE TRACKING -->
-            <a-entity mindar-face-target="anchorIndex: 168">
-	            <a-gltf-model src="#glassesModel"
-                rotation="0 0 0" 
-                position="0 0 0" 
-                scale="0.01 0.01 0.01">
-                </a-gltf-model>
             </a-entity>
 
         </a-scene>
