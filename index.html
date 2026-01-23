@@ -6,10 +6,9 @@
     <meta name="description" content="NAFA 3DD Openhouse 2026 - Interactive AR Experience showcasing School of 3D Design">
     <title>NAFA 3DD Openhouse 2026</title>
     
-    <!-- A-Frame & MindAR SOURCE FILE-->
+    <!-- A-Frame & MindAR -->
     <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-face-aframe.prod.js"></script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,6 +28,7 @@
             color: #fff;
             overflow: hidden;
             touch-action: none;
+            margin: 0;
         }
         
         /* Loading Screen */
@@ -387,9 +387,34 @@
                 padding: 20px;
             }
         }
+
+        #ar-ui {
+            position: fixed;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: flex;
+            gap: 10px;
+        }
+
+        #ar-ui button {
+            padding: 10px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            cursor: pointer;
+            backdrop-filter: blur(6px);
+        }
+
+        #ar-ui button:active {
+            background: rgba(0,0,0,0.9);
+        }
+
     </style>
 </head>
-
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -450,6 +475,11 @@
     <!-- Touch Feedback -->
     <div id="touch-feedback"></div>
     
+    <!-- Button Scene -->
+    <div id="ar-ui">
+        <button onclick="location.href='indexface.html'">Face AR</button>
+    </div>
+
     <!-- A-Frame Scene -->
     <div id="ar-container">
         <!-- marker generalsignage -->
@@ -459,11 +489,9 @@
             renderer="antialias: true; alpha: true; physicallyCorrectLights: true"
             vr-mode-ui="enabled: false"
             device-orientation-permission-ui="enabled: false"
-            id="ar-scene"
-            mindar-face
-            embedded>
+            id="ar-scene">
 
-            <!-- 3D ASSETS BELOW-->
+            <!-- Assets -->
             <a-assets>
                 <a-asset-item id="model0" src="./assets/glb/0bowls.glb"></a-asset-item>
                 <a-asset-item id="model1" src="./assets/glb/1butterfly.glb"></a-asset-item>
@@ -475,14 +503,13 @@
                 <a-asset-item id="model7" src="./assets/glb/7house.glb"></a-asset-item>
                 <a-asset-item id="model8" src="./assets/glb/8puzzle.glb"></a-asset-item>
                 <a-asset-item id="model9" src="./assets/glb/9tape.glb"></a-asset-item>
-                <a-asset-item id="glassesModel" src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.2.5/examples/face-tracking/assets/glasses/scene.gltf"></a-asset-item>
             </a-assets>
-            <!-- 3D ASSETS ABOVE-->
 
             <!-- Lighting -->
             <a-entity light="type: ambient; intensity: 0.8"></a-entity>
             <a-entity light="type: directional; intensity: 0.6" position="1 1 1"></a-entity>
-            <a-camera look-controls="enabled: false" active="false" position="0 0 0"></a-camera>
+
+            <a-camera look-controls="enabled: false"></a-camera>
 
             <!-- TARGET 0 general signage -->
             <a-entity mindar-image-target="targetIndex: 0">
@@ -620,15 +647,6 @@
                     animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: .; align: center"></a-entity>
-            </a-entity>
-
-            <!-- FACE TRACKING -->
-            <a-entity mindar-face-target="anchorIndex: 168">
-	            <a-gltf-model src="#glassesModel"
-                rotation="0 0 0" 
-                position="0 0 0" 
-                scale="0.01 0.01 0.01">
-                </a-gltf-model>
             </a-entity>
 
         </a-scene>
