@@ -592,16 +592,24 @@
 
             <!-- TARGET 8 -->
             <a-entity mindar-image-target="targetIndex: 8">
-                <a-gltf-model src="#model3" scale="1 1 1"
-                    animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
+                <a-gltf-model src="#model3" 
+                    position="0 -0.3 0"
+                    rotation="-90 0 0" 
+                    scale="0.006 0.006 0.006"
+                    data-base-scale="0.01"
+                    animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: .; align: center"></a-entity>
             </a-entity>
 
             <!-- TARGET 9 -->
             <a-entity mindar-image-target="targetIndex: 9">
-                <a-gltf-model src="#model7" scale="1 1 1"
-                    animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
+                <a-gltf-model src="#model7"
+                    position="0 -0.3 0"
+                    rotation="-90 0 0" 
+                    scale="0.006 0.006 0.006"
+                    data-base-scale="0.01"
+                    animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity position="0 0.2 0" text="value: .; align: center"></a-entity>
             </a-entity>
