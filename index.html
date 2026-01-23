@@ -481,9 +481,12 @@
 
             <!-- TARGET 0 general signage -->
             <a-entity mindar-image-target="targetIndex: 0">
-                <a-gltf-model src="#model6" scale="0.01 0.01 0.01"
+                <a-gltf-model src="#model6" 
+                    position="0 -0.3 0"
+                    rotation="-90 0 0" 
+                    scale="0.01 0.01 0.01"
                     data-base-scale="0.01"
-                    animation="property: rotation; to: 0 0 360; loop: true; dur: 6000">
+                    animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <a-entity position="0 -0.3 0"
                     text="value: Welcome to NAFA 2026; align: center; color: #00D4FF; width: 2">
@@ -771,6 +774,44 @@
         startDistance = null;
         });
     </script>
+
+    <script>
+        let isDragging = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        const ROTATION_SPEED = 0.005;
+
+        document.addEventListener("touchstart", (e) => {
+        if (e.touches.length === 1) {
+            isDragging = true;
+            lastX = e.touches[0].pageX;
+            lastY = e.touches[0].pageY;
+        }
+        }, { passive: true });
+
+        document.addEventListener("touchmove", (e) => {
+        if (!isDragging || e.touches.length !== 1) return;
+
+        const dx = e.touches[0].pageX - lastX;
+        const dy = e.touches[0].pageY - lastY;
+
+        document.querySelectorAll("a-gltf-model").forEach(model => {
+            if (!model.object3D.visible) return;
+
+            model.object3D.rotation.y += dx * ROTATION_SPEED;
+            model.object3D.rotation.x += dy * ROTATION_SPEED;
+        });
+
+        lastX = e.touches[0].pageX;
+        lastY = e.touches[0].pageY;
+        });
+
+        document.addEventListener("touchend", () => {
+        isDragging = false;
+        });
+    </script>
+
 
 </body>
 </html>
