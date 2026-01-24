@@ -403,8 +403,8 @@
             font-size: 14px;
             border: none;
             border-radius: 8px;
-            background: hwb(170 0% 0% / 0.637);
-            color: hwb(318 0% 52%);
+            background: rgba(0, 255, 213, 0.637);
+            color: rgba(122, 0, 85, 0.76);
             cursor: pointer;
             backdrop-filter: blur(6px);
         }
@@ -478,6 +478,7 @@
     <!-- Button Scene -->
     <div id="ar-ui">
         <button onclick="location.href='indexface.html'">Click here for Face AR</button>
+        <button onclick="location.href='indexfacecapy.html'">Click here for Face Capy AR</button>
     </div>
 
     <!-- A-Frame Scene -->
@@ -513,7 +514,7 @@
 
             <!-- TARGET 0 general signage -->
             <a-entity mindar-image-target="targetIndex: 0">
-                <a-gltf-model src="#model6" 
+                <a-gltf-model src="#model7" 
                     position="0 -0.3 0"
                     rotation="-90 0 0" 
                     scale="0.01 0.01 0.01"
@@ -639,7 +640,7 @@
 
             <!-- TARGET 9 -->
             <a-entity mindar-image-target="targetIndex: 9">
-                <a-gltf-model src="#model7"
+                <a-gltf-model src="#model6"
                     position="0 -0.3 0"
                     rotation="-90 0 0" 
                     scale="0.006 0.006 0.006"
