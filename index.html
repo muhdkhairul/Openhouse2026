@@ -494,7 +494,8 @@
 
             <!-- Assets -->
             <a-assets>
-                <a-asset-item id="model0" src="./assets/glb/0bowls.glb"></a-asset-item>
+                <a-asset-item id="model0a" src="./assets/glb/bowl1.glb"></a-asset-item>
+                <a-asset-item id="model0b" src="./assets/glb/bowl2.glb"></a-asset-item>
                 <a-asset-item id="model1" src="./assets/glb/1butterfly.glb"></a-asset-item>
                 <a-asset-item id="model2" src="./assets/glb/2cutecartoon.glb"></a-asset-item>
                 <a-asset-item id="model3" src="./assets/glb/3dice.glb"></a-asset-item>
@@ -558,12 +559,20 @@
             <!-- TARGET 4 school of 3d design -->
             <a-entity mindar-image-target="targetIndex: 4">
                 <a-gltf-model 
-                    src="#model0" 
+                    src="#model0a" 
                     position="0 0 0"
-                    rotation="-90 0 0" 
+                    rotation="0 0 0" 
                     scale="0.012 0.012 0.012"
                     data-base-scale="0.01"
-                    animation="property: rotation; to: -90 0 360; loop: true; dur: 6000; easing: linear">
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear">
+                </a-gltf-model>
+                <a-gltf-model 
+                    src="#model0b" 
+                    position="0 0 0"
+                    rotation="0 0 0" 
+                    scale="0.012 0.012 0.012"
+                    data-base-scale="0.01"
+                    animation="property: rotation; to: 0 360 0; loop: true; dur: 6000; easing: linear">
                 </a-gltf-model>
                 <!-- 
                 <a-entity 
